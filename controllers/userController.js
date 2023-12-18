@@ -51,7 +51,7 @@ const registerController = async (req, res) => {
 
     }
     catch (error) {
-        console.error(error);
+        // console.error(error);
         return res.status(500).json({
             success: false,
             message: "Error: in Registration API",
@@ -100,7 +100,7 @@ const loginController = async (req, res) => {
         })
     }
     catch (error) {
-        console.error(error);
+        // console.error(error);
         return res.status(500).json({
             success: false,
             message: "Login Failure",
@@ -119,7 +119,7 @@ const updateUserController = async (req, res) => {
                 message: "Invalid password",
             })
         }
-        console.log("Updating user")
+        // console.log("Updating user")
         const hashedPassword = password ? await hashPassword(password) : undefined;
 
         const updatedUser = await userModel.findOneAndUpdate({ email }, {
@@ -136,7 +136,7 @@ const updateUserController = async (req, res) => {
 
     }
     catch (e) {
-        console.log(e);
+        // console.log(e);
         return res.status(500).json({
             success: false,
             message: "Updatation Failure",
