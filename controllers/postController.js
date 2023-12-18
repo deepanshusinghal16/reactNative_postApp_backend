@@ -20,7 +20,7 @@ const createPostController = async (req, res) => {
         })
     }
     catch (error) {
-        console.log(error);
+        // console.log(error);
         return res.status(500).json({
             success: false,
             message: "Error creating post",
@@ -39,7 +39,7 @@ const getAllPostsController = async (req, res) => {
         })
     }
     catch (error) {
-        console.log("Error getting all posts");
+        // console.log("Error getting all posts");
         return res.status(500).json({
             success: false,
             message: "Error getting all post",
@@ -58,7 +58,7 @@ const getUserPostsController = async (req, res) => {
         })
     }
     catch (error) {
-        console.log("Error getting all posts");
+        // console.log("Error getting all posts");
         return res.status(500).json({
             success: false,
             message: "Error getting user post",
@@ -70,16 +70,16 @@ const getUserPostsController = async (req, res) => {
 const deletePostController = async (req, res) => {
     try {
         const { id } = req.params;
-        console.log(id);
+        // console.log(id);
         await postModel.findByIdAndDelete({ _id: id })
-        console.log(id);
+        // console.log(id);
         return res.status(200).json({
             success: true,
             message: "Posts deleted successfully",
         })
     }
     catch (error) {
-        console.log("Error getting all posts");
+        // console.log("Error getting all posts");
         return res.status(500).json({
             success: false,
             message: "Error deleting the post",
@@ -113,7 +113,7 @@ const updatePostController = async (req, res) => {
         })
     }
     catch (error) {
-        console.log("Error getting all posts");
+        // console.log("Error getting all posts");
         return res.status(500).json({
             success: false,
             message: "Error updating the post",
